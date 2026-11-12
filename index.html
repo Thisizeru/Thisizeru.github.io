@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eru Paul — Data Engineer &amp; Analyst</title>
+<style>
+:root{--bg:#fafaf7;--card:#fff;--text:#16181d;--muted:#5b6170;--accent:#0f7b6c;--line:#e4e4de;--chip:#e7f3f0;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1013;--card:#171a20;--text:#eceef2;--muted:#9aa1b0;--accent:#3fc9b0;--line:#272b34;--chip:#16302b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1013;--card:#171a20;--text:#eceef2;--muted:#9aa1b0;--accent:#3fc9b0;--line:#272b34;--chip:#16302b;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:860px;margin:0 auto;padding:48px 20px 64px}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;margin:0 0 8px;letter-spacing:-.02em}
+h2{font-size:1.1rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:56px 0 16px}
+.tag{font-size:1.2rem;color:var(--muted);margin:0 0 20px}
+.lead{max-width:640px;margin:0 0 24px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;background:var(--accent);color:var(--bg);text-decoration:none;font-weight:600}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);padding:8px 16px}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+.links a{color:var(--accent);font-weight:600}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h3{margin:0 0 6px;font-size:1.15rem}
+.card p{margin:8px 0;color:var(--muted);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{background:var(--chip);color:var(--accent);padding:3px 10px;border-radius:99px;font-size:.8rem;font-weight:600}
+.card a{color:var(--accent);font-weight:600}
+.skills{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.skills div{border-left:3px solid var(--accent);padding:2px 0 2px 12px}
+.skills b{display:block}
+.skills span{color:var(--muted);font-size:.92rem}
+footer{margin-top:56px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+<body>
+<main>
+<h1>Eru Paul</h1>
+<p class="tag">Data engineer &amp; data analyst · Economics graduate · Nigeria · Open to remote roles</p>
+<p class="lead">I build end-to-end data pipelines on real data: extract from live APIs, load into Postgres, model with dbt, test, schedule, and deploy. The two pipeline projects below are running in production, not just on my laptop. My stack is Python, SQL, Airflow, dbt, Docker and AWS, and I also do data analysis and dashboards with Pandas, SQL and Power BI. I’m looking for a remote data engineer or data analyst role, especially with teams in EMEA.</p>
+<a class="btn" href="#projects">See my projects</a> <a class="btn ghost" href="mailto:pauleru000@gmail.com">Email me</a>
+
+<h2 id="projects">Projects</h2>
+<div class="grid">
+<div class="card">
+<h3>Nigeria Job Market Tracker</h3>
+<p>A daily pipeline that pulls Nigerian job listings from the Jooble API, cleans and deduplicates them, and shows hiring trends on a public dashboard.</p>
+<p>Raw JSON loads into Postgres, dbt models build the cleaned jobs table and analytics tables (top companies, work mode, job type, jobs per week, top skills), and dbt tests run on every refresh. GitHub Actions runs it daily against a hosted Neon Postgres database.</p>
+<div class="chips"><span class="chip">Python</span><span class="chip">PostgreSQL</span><span class="chip">dbt</span><span class="chip">GitHub Actions</span><span class="chip">Streamlit</span></div>
+<p><a href="https://nigeria-job-market-tracker-c2dqzraz9ouopa9qo4cgnt.streamlit.app" target="_blank" rel="noopener">View live dashboard →</a></p>
+</div>
+
+<div class="card">
+<h3>Fantasy Premier League Data Pipeline</h3>
+<p>An automated pipeline that collects Fantasy Premier League data and keeps it queryable in Postgres, built for a group of FPL managers who wanted access to their data in the off-season.</p>
+<p>Orchestrated with Apache Airflow 3.0 in Docker, with separate databases for Airflow metadata and pipeline data. It handles the FPL API’s bot protection and is deployed on an AWS EC2 instance.</p>
+<div class="chips"><span class="chip">Airflow</span><span class="chip">Docker</span><span class="chip">PostgreSQL</span><span class="chip">Python</span><span class="chip">AWS EC2</span></div>
+</div>
+
+<div class="card">
+<h3>Premier League Analysis &amp; Power BI Dashboard (2021–2023)</h3>
+<p>Cleaned and analysed three seasons of English Premier League match data with Pandas, ran deeper queries in Postgres, and built an interactive Power BI dashboard.</p>
+<p>Cleaning covered missing values, duplicates and data types, saved as Parquet and CSV. Exploratory analysis in Matplotlib looked at goals, results, fouls, cards and attendance. SQL queries found top scoring stadiums and the teams with the most wins and draws. The dashboard pulls it together.</p>
+<div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span><span class="chip">PostgreSQL</span><span class="chip">Power BI</span></div>
+<p><a href="https://github.com/Thisizeru/EPL_Analysis_Project" target="_blank" rel="noopener">View code →</a></p>
+</div>
+
+<div class="card">
+<h3>Online Retail Store Analysis &amp; Power BI Dashboard</h3>
+<p>Analysis and an interactive dashboard of a year of sales for an online retail store whose customers are mainly in European countries.</p>
+<p>Cleaned and structured the data with Pandas, then explored total revenue, top-selling products, the sales trend over the year, the link between quantity and unit price, and which countries had the most customers. The dashboard highlights customer and product KPIs, and the cleaned data is exported as CSV and Parquet.</p>
+<div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span><span class="chip">Power BI</span></div>
+<p><a href="https://github.com/Thisizeru/Online-Retail-Store-Analysis-Project" target="_blank" rel="noopener">View code →</a></p>
+</div>
+</div>
+
+<h2>Skills</h2>
+<div class="skills">
+<div><b>Languages</b><span>Python, SQL</span></div>
+<div><b>Orchestration &amp; transformation</b><span>Apache Airflow, dbt, Apache Spark</span></div>
+<div><b>Databases</b><span>PostgreSQL, Neon</span></div>
+<div><b>Infrastructure</b><span>Docker, Git, GitHub Actions, AWS</span></div>
+<div><b>Analysis &amp; dashboards</b><span>Pandas, Matplotlib, Streamlit, Power BI</span></div>
+</div>
+
+<h2>What I bring</h2>
+<div class="grid">
+<div class="card"><h3>Pipelines that run unattended</h3><p>Scheduled extraction and loading with Airflow and GitHub Actions, with no manual handoffs.</p></div>
+<div class="card"><h3>Tested, modelled data</h3><p>Clean analytics tables built with dbt and SQL, with tests on every run.</p></div>
+<div class="card"><h3>Deployment experience</h3><p>Dockerised pipelines running on AWS EC2, and a dashboard live on Streamlit Cloud.</p></div>
+<div class="card"><h3>Real-world debugging</h3><p>Worked through Docker networking, API authentication and bot protection to get pipelines stable.</p></div>
+</div>
+
+<h2>Contact</h2>
+<p class="lead">Have a data project in mind? Get in touch.</p>
+<div class="links">
+<a href="mailto:pauleru000@gmail.com">pauleru000@gmail.com</a>
+<a href="https://github.com/Thisizeru" target="_blank" rel="noopener">GitHub</a>
+<a href="https://www.linkedin.com/in/paul-eru-958837315" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+
+<footer>Open to remote data engineering and data analyst roles, and freelance work.</footer>
+</main>
+</body>
+</html>
